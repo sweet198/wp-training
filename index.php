@@ -503,7 +503,36 @@
         </div>
     </div>
 </div>
-
+<?php // Разбор хуков action и filters
+//function print_hello($text, $name) {
+//    echo 'Hello world' . ' ' . $text . ' ' . $name . '<br>';
+//};
+//
+//function print_hello_1() {
+//    echo 'Hello world_1' . '<br>';
+//};
+//
+//function print_hello_2() {
+//    echo 'Hello world_2' . '<br>';
+//};
+//
+//add_action('my_hook', 'print_hello', 10, 2); // hook событие, 10 - приоритет, 2 - кол-во аргументов в функции print_hello
+//add_action('my_hook', 'print_hello_1', 7);
+//add_action('my_hook', 'print_hello_2', 5);
+//
+//do_action('my_hook', 'dear costumer', 'Ivan');
+//?>
+<?php
+//    function my_filter_func($str) {
+//        return 'hello' . $str;
+//    };
+//
+//    add_filter('my_filter', 'my_filter_func');
+//
+//    echo apply_filters('my_filter', 'world');
+//?>
 <?php
 get_footer(); // подключение footer сайта
 ?>
+
+

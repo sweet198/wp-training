@@ -13,5 +13,6 @@
         wp_enqueue_script('childhood-scripts', get_template_directory_uri() . '/assets/js/main.min.js', array(), null, true ); // подключение скриптов, array('jquery') - загрузится только после загрузки jquery, true - в футере
     };
 
+    add_theme_support( 'custom-logo' ) // подключение возможности добавлять лого в админке
 
 ?>
