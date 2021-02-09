@@ -98,10 +98,18 @@
 </div>
 <div class="specialists" id="specialists">
     <div class="container">
-        <div class="title">Наша команда</div>
+        <div class="title"><?php the_field('team_title'); ?></div>
         <div class="row">
             <div class="col-lg-10 offset-lg-1">
-                <img class="specialists__img" src="<?php echo bloginfo('template_url');?>/assets/img/team.jpg" alt="наша команда">
+                <?php // подставляем изображение (вариант с массивом) из группы полей
+                $image = get_field('team_img');
+
+                if (!empty($image)): ?>
+                    <img class="specialists__img"
+                            src="<?php echo $image['url']; ?>"
+                            alt="<?php echo $image['alt']; ?>">
+                <?php endif;
+                ?>
             </div>
         </div>
     </div>
@@ -197,7 +205,7 @@
         <div class="row">
             <div class="col-lg-10 offset-lg-1">
                 <div class="toys__alert">
-                    <span>Не нашли то, что искали?</span> Свяжитесь с нами - и мы с радостью создадим любую игрушку по вашему желанию. Вы можете выбрать все: размер, материал, формы...!
+                    <span><?php the_field('toys_ask', 2); ?></span> <?php the_field('toys_alert', 2); ?>
                 </div>
             </div>
         </div>
@@ -206,35 +214,47 @@
 
 <div class="aboutus" id="aboutus">
     <div class="container">
-        <h1 class="title">Наша история</h1>
+        <h1 class="title"><?php the_field('aboutus_title'); ?></h1>
         <div class="row">
             <div class="col-lg-6">
                 <div class="subtitle">
-                    Все начиналось с желания
+                    <?php the_field('aboutus_title_1'); ?>
                 </div>
                 <div class="aboutus__text">
-                    Желания сделать как можно больше детей счастливыми. Именно с этой идеи все и зарождалось.
-                    <br><br>
-                    Первые игрушки, сделанные вручную были классическими плюшевыми медведями, которые разошлись настолько быстро, что нас завалили заказами на несколько месяцев вперед. Именно в то время мы поняли, что идем правильным путем, вкладывая все силы и эмоции в наши игрушки.
+                    <?php the_field('aboutus_descr_1'); ?>
                 </div>
             </div>
             <div class="col-lg-6">
-                <img class="aboutus__img" src="<?php echo bloginfo('template_url');?>/assets/img/about_1.jpg" alt="мир детства">
+                <?php // подставляем изображение (вариант с массивом) из группы полей
+                $image = get_field('aboutus_img_1');
+
+                if (!empty($image)): ?>
+                    <img class="aboutus__img"
+                         src="<?php echo $image['url']; ?>"
+                         alt="<?php echo $image['alt']; ?>">
+                <?php endif;
+                ?>
             </div>
         </div>
 
         <div class="row">
             <div class="col-lg-6">
-                <img class="aboutus__img" src="<?php echo bloginfo('template_url');?>/assets/img/about_2.jpg" alt="мир детства">
+                <?php // подставляем изображение (вариант с массивом) из группы полей
+                $image = get_field('aboutus_img_2');
+
+                if (!empty($image)): ?>
+                    <img class="aboutus__img"
+                         src="<?php echo $image['url']; ?>"
+                         alt="<?php echo $image['alt']; ?>">
+                <?php endif;
+                ?>
             </div>
             <div class="col-lg-6">
                 <div class="subtitle">
-                    Главное - качество
+                    <?php the_field('aboutus_title_2'); ?>
                 </div>
                 <div class="aboutus__text">
-                    Мы делали их вручную, из лучших материалов и не жалея времени. Но мы росли и наш ассортимент расширился и фабричными изделиями.
-                    <br><br>
-                    Выбирая нас, вы можете быть уверены, что мы всегда следим за качеством закупок и никогда не предоставим вам опасный или некачественный товар.
+                    <?php the_field('aboutus_descr_2'); ?>
                 </div>
             </div>
         </div>
@@ -242,30 +262,34 @@
         <div class="row">
             <div class="col-lg-6">
                 <div class="subtitle">
-                    Современные технологии
+                    <?php the_field('aboutus_title_3'); ?>
                 </div>
                 <div class="aboutus__text">
-                    И даже спустя столько лет мы продолжаем создавать игрушки вручную. Как самые простые, так и те, что идут в ногу со временем. Добавляя электроники и оживляя лучших друзей ребятишек, мы всегда следим за качеством и безопасностью. Каждая отдельная игрушка проходит индивидуальный контроль по всем необходимым стандартам.
-                    <br><br>
-                    Ведь счастливое лицо ребенка - это лучшая награда для нас!
+                    <?php the_field('aboutus_descr_3'); ?>
                 </div>
             </div>
             <div class="col-lg-6">
-                <img class="aboutus__img" src="<?php echo bloginfo('template_url');?>/assets/img/about_3.jpg" alt="мир детства">
+                <?php // подставляем изображение (вариант с массивом) из группы полей
+                $image = get_field('aboutus_img_3');
+
+                if (!empty($image)): ?>
+                    <img class="aboutus__img"
+                         src="<?php echo $image['url']; ?>"
+                         alt="<?php echo $image['alt']; ?>">
+                <?php endif;
+                ?>
             </div>
         </div>
     </div>
 </div>
 
 <div class="contacts" id="contacts">
-    <h1 class="title">Где нас найти</h1>
+    <h1 class="title"><?php the_field('contacts_title'); ?></h1>
     <div class="container">
         <div class="row">
             <div class="col-lg-6">
                 <div class="contacts__descr underlined">
-                    Мы находимся в Москве, метро "Парк победы", в деловом центре "Парк победы", второй этаж
-                    <br> <br>
-                    по адресу ул. Василисы Кожиной, 1
+                    <?php the_field('contacts_descr'); ?>
                 </div>
             </div>
             <div class="col-lg-6">
