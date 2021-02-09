@@ -39,18 +39,18 @@
                 <div class="header__contacts">
                     <div class="header__contacts-item">
                         <img src="<?php echo bloginfo('template_url');?>/assets/img/icons/svg/email.svg" alt="почта" class="header__contacts-logo">
-                        <a href="<?php the_field('mail', 2); ?>" class="header__contacts-mail"><?php the_field('mail', 2); ?></a> <!-- добавление почты из админ панели (цифра 2 - id главной страницы, можно использовать одну группу полей с условием "если страница главная")-->
+                        <a href="mailto:<?php the_field('mail', 2); ?>" class="header__contacts-mail"><?php the_field('mail', 2); ?></a> <!-- добавление почты из админ панели (цифра 2 - id главной страницы, можно использовать одну группу полей с условием "если страница главная")-->
                     </div>
                     <div class="header__contacts-item">
                         <img src="<?php echo bloginfo('template_url');?>/assets/img/icons/svg/phone.svg" alt="телефон" class="header__contacts-logo">
                         <div class="header__contacts-tel">
-                            <a href="<?php the_field('phone_1', 2); ?>"><?php the_field('phone_1', 2); ?></a> <!-- добавление телефона из админ панели (цифра 2 - id главной страницы, можно использовать одну группу полей с условием "если страница главная")-->
-                            <a href="<?php the_field('phone_2', 2); ?>"><?php the_field('phone_2', 2); ?></a>
+                            <a href="tel:<?php the_field('phone_1', 2); ?>"><?php the_field('phone_1', 2); ?></a> <!-- добавление телефона из админ панели (цифра 2 - id главной страницы, можно использовать одну группу полей с условием "если страница главная")-->
+                            <a href="tel:<?php the_field('phone_2', 2); ?>"><?php the_field('phone_2', 2); ?></a>
                         </div>
                     </div>
                     <div class="header__contacts-item">
                         <img src="<?php echo bloginfo('template_url');?>/assets/img/icons/svg/pointer.svg" alt="указатель" class="header__contacts-logo">
-                        <address><?php the_field('address', 2); ?></address>
+                        <address><?php the_field('address', 2); ?></address><!-- добавление адреса из админ панели (цифра 2 - id главной страницы, можно использовать одну группу полей с условием "если страница главная")-->
                     </div>
                 </div>
             </div>
