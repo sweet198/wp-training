@@ -62,8 +62,6 @@
                     </div>
                 </li>
                 <?php
-
-
             }
 
             wp_reset_postdata(); // сброс
@@ -121,6 +119,39 @@
 <div class="toys" id="toys">
     <div class="container">
         <h2 class="subtitle">Мягкие игрушки</h2>
+
+        <!-- Добавляем динамическое обновление игрушек через WP -->
+        <?php
+            // параметры по умолчанию
+            $posts = get_posts( array(
+                'numberposts' => -1,
+                'category_name'    => 'slider',
+                'orderby'     => 'date',
+                'order'       => 'ASC',
+                'post_type'   => 'post',
+                'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
+            ) );
+
+            foreach( $posts as $post ){
+            setup_postdata($post);
+        ?>
+
+        <div class="toys__item" style="background-image: url(<?php echo bloginfo('template_url');?>/assets/img/toy_1.jpg)">
+            <div class="toys__item-info">
+                <div class="toys__item-title"><?php the_title(); ?></div>
+                <div class="toys__item-descr">
+                    Классика. Должен быть у каждого ребенка!
+                </div>
+                <div class="minibutton toys__trigger">Подробнее</div>
+            </div>
+        </div>
+
+        <?php
+            }
+
+            wp_reset_postdata(); // сброс
+        ?>
+
         <div class="toys__wrapper">
             <div class="toys__item" style="background-image: url(<?php echo bloginfo('template_url');?>/assets/img/toy_1.jpg)">
                 <div class="toys__item-info">
