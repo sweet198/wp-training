@@ -290,7 +290,11 @@
                 </div>
             </div>
             <div class="col-lg-6">
-                <div id="map" class="contacts__map">
+<!--                <div class="contacts__map acf-map"> Подключаем acf карту -->
+<!--                </div>-->
+                <div class="contacts__map">
+<!--                        --><?php //echo do_shortcode('[wpgmza id="1"]') ?><!--  Подключение через плагин WP Google Maps-->
+                    <?php echo do_shortcode('[yamap center="59.9740,30.3557" height="100%" controls="" zoom="12" type="yandex#map" scrollzoom="0" mobiledrag="0"][yaplacemark  name="Метка" coord="59.9825,30.3873" icon="islands#dotIcon" color="#1e98ff"][/yamap]') ?> <!-- Подключение через плагин яндекс карты -->
                 </div>
             </div>
         </div>
